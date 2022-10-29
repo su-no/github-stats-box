@@ -61,7 +61,7 @@ async function updateGist(stats) {
 
     const gistContent =
         [
-            ['⭐', `Total Stars`, humanize(stats.totalStars)],
+            // ['⭐', `Total Stars`, humanize(stats.totalStars)],
             ['➕', countAllCommits ? 'Total Commits' : 'Past Year Commits', humanize(stats.totalCommits)],
             ['🔀', `Total PRs`, humanize(stats.totalPRs)],
             ['🚩', `Total Issues`, humanize(stats.totalIssues)],
@@ -89,7 +89,7 @@ async function updateGist(stats) {
     return request('PATCH /gists/:gist_id', {
         files: {
             [filename]: {
-                filename: `${stats.name}'s GitHub Stats`,
+                filename: `My GitHub Stats ✨`,
                 content: gistContent,
             },
         },
